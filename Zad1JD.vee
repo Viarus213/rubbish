@@ -1,0 +1,189 @@
+(saveFormat "7.0")
+(date "Wed 08/May/2019 13:34:30 ")
+(veerev "9.33.1811.0201")
+(platform "PC")
+(execMode v6)
+(prefExecMode v9)
+(filterNAN 0)
+(workspaceStackingOrder M)
+(sysconfig)
+(SaveCF no)
+(device 0 ROOTCONTEXT
+(properties
+(variableName Main)
+(variableScope glob)
+(trigMode deg)
+(nextID 7)
+(popupTitleText "Untitled")
+(popupMoveable 1)
+(deleteGlobals 0))
+(deviceList
+(device 0 SCROLLINGTEXTDISPLAY
+(properties
+(variableScope cont)
+(logSize 256))
+(interface
+(input 1
+(name "Data"))))
+(device 1 CONSTANT
+(properties
+(name "Int32")
+(variableScope cont)
+(enableEditing 1))
+(interface
+(output 1
+(name "Int32")
+(lock name constraints)))
+(implementation
+(value Int32
+(data  2))
+(initValue Int32
+(data  0))))
+(device 2 FORMULA
+(properties
+(variableScope cont)
+(expr 1 "zmiennaA*zmiennaB"))
+(interface
+(input 1
+(name "zmiennaA")
+(optional yes))
+(input 2
+(name "zmiennaB")
+(optional yes))
+(output 1
+(name "Result")
+(tag "Result")
+(lock name constraints)
+(optional yes))))
+(device 3 FORCOUNT
+(properties
+(variableScope cont)
+(count 11))
+(interface
+(output 1
+(name "Count")
+(lock name constraints))))
+(device 4 JUNCTION
+(properties
+(name "JCT")
+(variableScope cont))
+(interface
+(input 1
+(name "A"))
+(input 2
+(name "B"))
+(output 1
+(name "Data"))))
+(device 5 CONSTANT
+(properties
+(name "Int32")
+(variableScope cont)
+(enableEditing 1))
+(interface
+(output 1
+(name "Int32")
+(lock name constraints)))
+(implementation
+(value Int32
+(data  1))
+(initValue Int32
+(data  0))))
+(device 6 FORMULA
+(properties
+(variableScope cont)
+(expr 1 "A/2"))
+(interface
+(input 1
+(name "A")
+(optional yes))
+(output 1
+(name "Result")
+(tag "Result")
+(lock name constraints)
+(optional yes))))
+(configuration
+(connect D6:1 D0:1)
+(connect D3:1 D2:0)
+(connect D1:1 D2:1)
+(connect D4:1 D2:2)
+(connect D5:1 D4:1)
+(connect D2:1 D4:2)
+(connect D2:1 D6:1)))
+(contextCarrier
+(wndRestoredOrigin 2 2)
+(wndRestoredExtent 878 585)
+(wndState max)
+(active detail)
+(detail
+(extent 1106 813)
+(anchorPt 0 0)
+(configuration
+(devCarrierFor 0
+(active open)
+(icon)
+(open
+(extent 173 167)
+(noformatter))
+(pinCenter 960 330))
+(devCarrierFor 1
+(active open)
+(icon)
+(open
+(extent 67 29)
+(showFormat int))
+(pinCenter 140 270))
+(devCarrierFor 2
+(active open)
+(icon)
+(open
+(extent 164 66))
+(terminals on)
+(pinCenter 430 340))
+(devCarrierFor 3
+(active open)
+(icon
+(iconImage "loop.icn"))
+(open
+(extent 95 31))
+(pinCenter 420 230))
+(devCarrierFor 4
+(active icon)
+(icon
+(extent 26 25))
+(open)
+(terminals on)
+(pinCenter 230 370))
+(devCarrierFor 5
+(active open)
+(icon)
+(open
+(extent 67 29)
+(showFormat int))
+(pinCenter 130 410))
+(devCarrierFor 6
+(active open)
+(icon)
+(open
+(extent 145 50))
+(terminals on)
+(pinCenter 700 330))
+(connect D6:1 D0:1
+(points 2 825 330 871 330))
+(connect D3:1 D2:0
+(points 5 470 230 490 230 490 270 420 270 420 286))
+(connect D1:1 D2:1
+(points 4 176 270 200 270 200 320 275 320))
+(connect D4:1 D2:2
+(points 4 245 370 260 370 260 360 275 360))
+(connect D5:1 D4:1
+(points 4 166 410 190 410 190 360 214 360))
+(connect D2:1 D4:2
+(points 6 564 340 580 340 580 410 200 410 200 380 214 380))
+(connect D2:1 D6:1
+(points 4 564 340 580 340 580 330 595 330)))
+(stackingOrder 0 1 2 3 4 5 6))
+(numberFormats
+(realFormat standard)
+(realSigDigits 4)
+(realRadixSpec 4)
+(integerBase decimal))))

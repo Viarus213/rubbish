@@ -1,0 +1,311 @@
+(saveFormat "7.0")
+(date "Wed 29/May/2019 14:17:40 ")
+(veerev "9.33.1811.0201")
+(platform "PC")
+(execMode v6)
+(prefExecMode v9)
+(filterNAN 0)
+(workspaceStackingOrder M)
+(sysconfig)
+(SaveCF no)
+(device 0 ROOTCONTEXT
+(assemblyRefs
+(assemblyRef 1
+(displayName
+"mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+)
+(filename "C:\\WINDOWS\\Microsoft.NET\\Framework\\v1.1.4322\\mscorlib.dll"))
+(assemblyRef 2
+(displayName
+"System, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089")
+(filename "C:\\WINDOWS\\Microsoft.NET\\Framework\\v1.1.4322\\System.dll"))
+(selectedNamespaces ""))
+(properties
+(variableName Main)
+(variableScope glob)
+(trigMode deg)
+(nextID 36)
+(popupTitleText "Untitled")
+(popupMoveable 1)
+(deleteGlobals 0))
+(deviceList
+(device 18 REPEATUNTILBREAK
+(properties
+(variableScope cont))
+(interface
+(output 1
+(name "Continuous")
+(lock name constraints))))
+(device 3 SCROLLINGTEXTDISPLAY
+(properties
+(variableScope cont)
+(logSize 256))
+(interface
+(input 1
+(name "Data"))))
+(device 7 FORMULA
+(properties
+(variableScope cont)
+(expr 1 "X2-X1"))
+(interface
+(input 1
+(name "X1")
+(optional yes))
+(input 2
+(name "X2")
+(optional yes))
+(output 1
+(name "Result")
+(tag "Result")
+(lock name constraints)
+(optional yes))))
+(device 8 SCROLLINGTEXTDISPLAY
+(properties
+(variableScope cont)
+(logSize 256))
+(interface
+(input 1
+(name "Data"))))
+(device 15 SCROLLINGTEXTDISPLAY
+(properties
+(variableScope cont)
+(logSize 256))
+(interface
+(input 1
+(name "Data"))))
+(device 16 SCROLLINGTEXTDISPLAY
+(properties
+(variableScope cont)
+(logSize 256))
+(interface
+(input 1
+(name "Data"))))
+(device 12 FROMGLOBAL
+(properties
+(name "Get X2")
+(variableScope cont)
+(globalName "X2"))
+(interface
+(output 1
+(name "Data")
+(tag "Data")
+(lock name constraints))))
+(device 4 DELAY
+(properties
+(variableScope cont)
+(delay 15))
+(interface
+(output 1
+(name "Done"))))
+(device 11 FROMGLOBAL
+(properties
+(name "Get X1")
+(variableScope cont)
+(globalName "X1"))
+(interface
+(output 1
+(name "Data")
+(tag "Data")
+(lock name constraints))))
+(device 10 TOGLOBAL
+(properties
+(name "Set X2")
+(variableScope cont)
+(globalName "X2"))
+(interface
+(input 1
+(name "Data")
+(tag "Data")
+(lock name))))
+(device 9 TOGLOBAL
+(properties
+(name "Set X1")
+(variableScope cont)
+(globalName "X1"))
+(interface
+(input 1
+(name "Data")
+(tag "Data")
+(lock name))))
+(device 13 FORMULA
+(properties
+(name "asInt64(x)")
+(variableScope cont)
+(expr 1 "asInt64(x)"))
+(interface
+(input 1
+(name "x")
+(optional yes))
+(output 1
+(name "Result")
+(tag "Result")
+(lock name constraints)
+(optional yes))))
+(device 2 TOFROMSOCKET
+(properties
+(variableScope cont)
+(transactions 1 "READ TEXT x STR"))
+(interface
+(output 1
+(name "x")
+(optional yes)))
+(implementation
+(attr iopath socket "connect" "10.9.1.198" 55501
+(readTerm "\n")
+(fs " ")
+(eol "\n")
+(multiField fullSyntax)
+(arrayFormat block)
+(timeout 10)
+(byteOrder 0))))
+(configuration
+(connect D6:0 D2:0)
+(connect D8:1 D2:1)
+(connect D6:1 D2:2)
+(connect D2:1 D3:1)
+(connect D8:1 D4:1)
+(connect D6:1 D5:1)
+(connect D7:1 D6:0)
+(connect D0:1 D7:0)
+(connect D7:0 D8:0)
+(connect D11:1 D9:1)
+(connect D11:1 D10:1)
+(connect D12:1 D11:1)
+(connect D0:1 D12:0)))
+(contextCarrier
+(wndRestoredOrigin 2 2)
+(wndRestoredExtent 702 385)
+(wndState max)
+(active detail)
+(detail
+(extent 1128 813)
+(anchorPt -352 -340)
+(configuration
+(devCarrierFor 18
+(active icon)
+(icon
+(extent 68 51)
+(iconImage "loop.icn"))
+(open)
+(terminals on)
+(pinCenter 490 320))
+(devCarrierFor 3
+(active open)
+(icon)
+(open
+(extent 173 167)
+(noformatter))
+(pinCenter 1200 390))
+(devCarrierFor 7
+(active open)
+(icon)
+(open
+(extent 145 50))
+(terminals on)
+(pinCenter 1440 810))
+(devCarrierFor 8
+(active open)
+(icon)
+(open
+(extent 173 167)
+(noformatter))
+(pinCenter 1630 650))
+(devCarrierFor 15
+(active open)
+(icon)
+(open
+(extent 173 167)
+(noformatter))
+(pinCenter 1370 970))
+(devCarrierFor 16
+(active open)
+(icon)
+(open
+(extent 173 167)
+(noformatter))
+(pinCenter 1150 1130))
+(devCarrierFor 12
+(active open)
+(icon
+(extent 40 0))
+(open
+(extent 73 51))
+(terminals on)
+(pinCenter 1055 890))
+(devCarrierFor 4
+(active open)
+(icon)
+(open
+(extent 71 31))
+(pinCenter 1090 560))
+(devCarrierFor 11
+(active open)
+(icon
+(extent 44 15))
+(open
+(extent 73 51))
+(terminals on)
+(pinCenter 1095 660))
+(devCarrierFor 10
+(active open)
+(icon
+(extent 39 0))
+(open
+(extent 73 51))
+(terminals on)
+(pinCenter 825 900))
+(devCarrierFor 9
+(active open)
+(icon
+(extent 39 0))
+(open
+(extent 73 51))
+(terminals on)
+(pinCenter 855 640))
+(devCarrierFor 13
+(active open)
+(icon
+(extent 59 0))
+(open
+(extent 89 50))
+(terminals on)
+(pinCenter 910 460))
+(devCarrierFor 2
+(active open)
+(icon)
+(open
+(extent 233 157))
+(terminals on)
+(pinCenter 500 510))
+(connect D6:0 D2:0
+(points 6 1060 918 1060 950 1170 950 1170 740 1450 740 1450 764))
+(connect D8:1 D2:1
+(points 4 1174 660 1190 660 1190 800 1335 800))
+(connect D6:1 D2:2
+(points 4 1134 890 1160 890 1160 820 1335 820))
+(connect D2:1 D3:1
+(points 6 1565 810 1590 810 1590 750 1520 750 1520 650 1541 650))
+(connect D8:1 D4:1
+(points 4 1174 660 1190 660 1190 970 1281 970))
+(connect D6:1 D5:1
+(points 6 1134 890 1150 890 1150 940 1040 940 1040 1130 1061 1130))
+(connect D7:1 D6:0
+(points 7 1128 560 1150 560 1150 600 1080 600 1080 830 1060 830 1060 844))
+(connect D0:1 D7:0
+(points 5 526 320 550 320 550 370 1090 370 1090 524))
+(connect D7:0 D8:0
+(points 4 1090 578 1090 590 1100 590 1100 614))
+(connect D11:1 D9:1
+(points 8 1007 460 1030 460 1030 510 1010 510 1010 690 410 690 410 900 746 900))
+(connect D11:1 D10:1
+(points 8 1007 460 1030 460 1030 510 1010 510 1010 570 760 570 760 640 776 640))
+(connect D12:1 D11:1
+(points 4 649 510 670 510 670 460 833 460))
+(connect D0:1 D12:0
+(points 5 526 320 550 320 550 370 500 370 500 411)))
+(stackingOrder 0 1 2 3 4 5 6 7 8 9 10 11 12))
+(numberFormats
+(realFormat standard)
+(realSigDigits 4)
+(realRadixSpec 4)
+(integerBase decimal))))

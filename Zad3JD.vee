@@ -1,0 +1,243 @@
+(saveFormat "7.0")
+(date "Wed 08/May/2019 14:17:29 ")
+(veerev "9.33.1811.0201")
+(platform "PC")
+(execMode v6)
+(prefExecMode v9)
+(filterNAN 0)
+(workspaceStackingOrder M)
+(sysconfig)
+(SaveCF no)
+(device 0 ROOTCONTEXT
+(properties
+(variableName Main)
+(variableScope glob)
+(trigMode deg)
+(nextID 25)
+(popupTitleText "Untitled")
+(popupMoveable 1))
+(deviceList
+(device 0 REPEATUNTILBREAK
+(properties
+(variableScope cont))
+(interface
+(output 1
+(name "Continuous")
+(lock name constraints))))
+(device 1 DELAY
+(properties
+(variableScope cont)
+(delay 3))
+(interface
+(output 1
+(name "Done"))))
+(device 2 CONSTANT
+(properties
+(name "UInt8")
+(variableScope cont)
+(enableEditing 1))
+(interface
+(output 1
+(name "UInt8")
+(lock name constraints)))
+(implementation
+(value UInt8
+(data  1))
+(initValue UInt8
+(data  0))))
+(device 3 DELAY
+(properties
+(variableScope cont)
+(delay 1))
+(interface
+(output 1
+(name "Done"))))
+(device 4 DELAY
+(properties
+(variableScope cont)
+(delay 2))
+(interface
+(output 1
+(name "Done"))))
+(device 5 COLORALARM
+(properties
+(name "Czerwone")
+(variableScope cont)
+(split 0.33)
+(split2 0.66)
+(hilabel "High")
+(midlabel "Mid")
+(lowlabel "Low"))
+(interface
+(input 1
+(name "Data")
+(requires
+(datatype Real64)
+(shape "Scalar"))
+(lock name constraints))
+(input 2
+(type control)
+(name "Clear")
+(lock name constraints)
+(optional yes))))
+(device 6 COLORALARM
+(properties
+(name "zolte")
+(variableScope cont)
+(split 0.33)
+(split2 0.66)
+(hilabel "High")
+(midlabel "Mid")
+(lowlabel "Low"))
+(interface
+(input 1
+(name "Data")
+(requires
+(datatype Real64)
+(shape "Scalar"))
+(lock name constraints))
+(input 2
+(type control)
+(name "Clear")
+(lock name constraints)
+(optional yes))))
+(device 7 COLORALARM
+(properties
+(name "zielone")
+(variableScope cont)
+(split 0.33)
+(split2 0.66)
+(hilabel "High")
+(midlabel "Mid")
+(lowlabel "Low"))
+(interface
+(input 1
+(name "Data")
+(requires
+(datatype Real64)
+(shape "Scalar"))
+(lock name constraints))
+(input 2
+(type control)
+(name "Clear")
+(lock name constraints)
+(optional yes))))
+(configuration
+(connect D7:0 D1:0)
+(connect D0:1 D2:0)
+(connect D6:0 D3:0)
+(connect D5:0 D4:0)
+(connect D2:1 D5:1)
+(connect D3:1 D5:2)
+(connect D4:0 D6:0)
+(connect D2:1 D6:1)
+(connect D3:1 D6:2)
+(connect D3:0 D7:0)
+(connect D2:1 D7:1)
+(connect D1:1 D7:2)))
+(contextCarrier
+(wndRestoredOrigin 2 2)
+(wndRestoredExtent 812 585)
+(wndState max)
+(active detail)
+(detail
+(extent 1040 813)
+(anchorPt 190 31)
+(configuration
+(devCarrierFor 0
+(active open)
+(icon
+(extent 68 51)
+(iconImage "loop.icn"))
+(open
+(extent 12 30))
+(terminals on)
+(pinCenter 105 210))
+(devCarrierFor 1
+(active open)
+(icon)
+(open
+(extent 71 31))
+(pinCenter 360 700))
+(devCarrierFor 2
+(active open)
+(icon)
+(open
+(extent 69 29)
+(showFormat int))
+(pinCenter 140 320))
+(devCarrierFor 3
+(active open)
+(icon)
+(open
+(extent 71 31))
+(pinCenter 710 450))
+(devCarrierFor 4
+(active open)
+(icon)
+(open
+(extent 71 31))
+(pinCenter 710 280))
+(devCarrierFor 5
+(active open)
+(icon
+(extent 60 25))
+(open
+(extent 96 75)
+(fastmode on)
+(hicolor "Red")
+(lowcolor "White")
+(layout round))
+(pinCenter 530 200))
+(devCarrierFor 6
+(active open)
+(icon
+(extent 29 0))
+(open
+(extent 75 75)
+(fastmode on)
+(hicolor "Yellow")
+(lowcolor "White")
+(layout round))
+(pinCenter 520 390))
+(devCarrierFor 7
+(active open)
+(icon
+(extent 43 0))
+(open
+(extent 79 75)
+(fastmode on)
+(hicolor "Green")
+(lowcolor "White")
+(layout round))
+(pinCenter 520 570))
+(connect D7:0 D1:0
+(points 4 520 610 520 630 360 630 360 664))
+(connect D0:1 D2:0
+(points 5 193 210 210 210 210 250 140 250 140 285))
+(connect D6:0 D3:0
+(points 6 520 430 520 450 580 450 580 390 710 390 710 414))
+(connect D5:0 D4:0
+(points 6 530 240 530 260 600 260 600 220 710 220 710 244))
+(connect D2:1 D5:1
+(points 4 177 320 220 320 220 180 479 180))
+(connect D3:1 D5:2
+(points 8 748 450 770 450 770 380 640 380 640 300 460 300 460 220 479 220))
+(connect D4:0 D6:0
+(points 6 710 298 710 320 650 320 650 310 520 310 520 332))
+(connect D2:1 D6:1
+(points 6 177 320 200 320 200 360 400 360 400 370 480 370))
+(connect D3:1 D6:2
+(points 6 748 450 770 450 770 490 460 490 460 410 480 410))
+(connect D3:0 D7:0
+(points 4 710 468 710 480 520 480 520 512))
+(connect D2:1 D7:1
+(points 6 177 320 200 320 200 360 400 360 400 550 478 550))
+(connect D1:1 D7:2
+(points 4 398 700 420 700 420 590 478 590)))
+(stackingOrder 4 3 5 6 7 1 2 0))
+(numberFormats
+(realFormat standard)
+(realSigDigits 4)
+(realRadixSpec 4)
+(integerBase decimal))))

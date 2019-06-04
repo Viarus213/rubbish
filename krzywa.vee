@@ -1,0 +1,1193 @@
+(saveFormat "7.0")
+(date "Wed 22/May/2019 14:05:22 ")
+(veerev "9.33.1811.0201")
+(platform "PC")
+(execMode v6)
+(prefExecMode v9)
+(filterNAN 0)
+(workspaceStackingOrder M)
+(sysconfig)
+(SaveCF no)
+(device 0 ROOTCONTEXT
+(properties
+(variableName Main)
+(variableScope glob)
+(trigMode deg)
+(nextID 27)
+(popupTitleText "Untitled")
+(popupMoveable 1))
+(deviceList
+(UserFunctions
+(nextID 1)
+(context 0
+(properties
+(name "UserFunction1")
+(variableName UserFunction1)
+(variableScope glob)
+(trigMode deg)
+(nextID 3)
+(popupMoveable 1))
+(deviceList
+(device 0 CONTEXT
+(properties
+(name "PLOT")
+(variableScope cont)
+(trigMode deg)
+(nextID 3)
+(popupTitleText "UserObject")
+(popupMoveable 1))
+(interface
+(input 1
+(name "A")
+(optional yes))
+(input 2
+(name "B")
+(optional yes)))
+(deviceList
+(device 0 XYPLOT
+(properties
+(variableScope cont))
+(interface
+(input 1
+(name "XData")
+(lock constraints))
+(input 2
+(name "YData1")
+(lock constraints))
+(input 3
+(type control)
+(name "Auto Scale X")
+(lock name constraints)
+(optional yes))
+(input 4
+(type control)
+(name "Auto Scale Y")
+(lock name constraints)
+(optional yes)))
+(implementation
+(tracePin 2)
+(graphMode rectangular)
+(autoAutoX)
+(autoAutoY)))
+(device 1 FORMULA
+(properties
+(variableScope cont)
+(expr 1 "max(y)"))
+(interface
+(input 1
+(name "y")
+(optional yes))
+(output 1
+(name "Result")
+(tag "Result")
+(lock name constraints)
+(optional yes))))
+(device 2 FORMULA
+(properties
+(variableScope cont)
+(expr 1 "max(x)"))
+(interface
+(input 1
+(name "x")
+(optional yes))
+(output 1
+(name "Result")
+(tag "Result")
+(lock name constraints)
+(optional yes))))
+(configuration
+(connect I1:1 D0:1)
+(connect I2:1 D0:2)
+(connect D2:1 D0:3)
+(connect D1:1 D0:4)
+(connect I2:1 D1:1)
+(connect I1:1 D2:1)))
+(contextCarrier
+(active detail)
+(detail
+(extent 350 300)
+(anchorPt 0 0)
+(configuration
+(devCarrierFor 0
+(active open)
+(icon
+(iconImage "display.icn"))
+(open
+(extent 318 279)
+(displayMode 47)
+(graphType cartesian)
+(gridType grid)
+(scale 0
+(name "Y name")
+(domainName "X name")
+(Yspacing 1)
+(Xspacing 2)
+(scaleColor "Dark Gray")
+(show 1)
+(range -2 3.5 4 linear))
+(domain -3 3 4 linear)
+(trace 0 onScale 0
+(name "YData1")
+(traceColor "Blue")
+(lineType 12)
+(pointType 0))
+(displayBg "White"		)
+(markerColor "White"))
+(terminals on)
+(pinCenter 760 390))
+(devCarrierFor 1
+(active open)
+(icon)
+(open
+(extent 145 50))
+(terminals on)
+(pinCenter 310 490))
+(devCarrierFor 2
+(active open)
+(icon)
+(open
+(extent 145 50))
+(terminals on)
+(pinCenter 310 390))
+(connect I1:1 D0:1
+(points 4 0 69 10 69 10 280 508 280))
+(connect I2:1 D0:2
+(points 8 0 229 10 229 10 490 190 490 190 320 460 320 460 350 508 350))
+(connect D2:1 D0:3
+(points 4 435 390 460 390 460 420 508 420))
+(connect D1:1 D0:4
+(points 2 435 490 508 490))
+(connect I2:1 D1:1
+(points 4 0 229 10 229 10 490 205 490))
+(connect I1:1 D2:1
+(points 4 0 69 10 69 10 390 205 390)))
+(stackingOrder 0 1 2))))
+(device 1 CONTEXT
+(properties
+(name "Tablica")
+(variableScope cont)
+(trigMode deg)
+(nextID 8)
+(popupTitleText "UserObject")
+(popupMoveable 1))
+(interface
+(input 1
+(name "A")
+(optional yes))
+(output 1
+(type data)
+(name "X")
+(lock constraints)
+(optional yes))
+(output 2
+(type data)
+(name "Y")
+(lock constraints)
+(optional yes)))
+(deviceList
+(device 0 FORRANGE
+(properties
+(variableScope cont)
+(from 1)
+(thru 359)
+(step 1))
+(interface
+(output 1
+(name "Data")
+(lock name constraints))))
+(device 1 FORMULA
+(properties
+(variableScope cont)
+(expr 1 "sin(t)*(exp(cos(t))-2*cos(4*t)-sin(t/12)^5)"))
+(interface
+(input 1
+(name "t")
+(optional yes))
+(output 1
+(name "Result")
+(tag "Result")
+(lock name constraints)
+(optional yes))))
+(device 2 FORMULA
+(properties
+(variableScope cont)
+(expr 1 "cos(t)*(exp(cos(t))-2*cos(4*t)-sin(t/12)^5)"))
+(interface
+(input 1
+(name "t")
+(optional yes))
+(output 1
+(name "Result")
+(tag "Result")
+(lock name constraints)
+(optional yes))))
+(device 3 TORECORD
+(properties
+(variableScope cont)
+(outputType scalar))
+(interface
+(input 1
+(name "x")
+(optional yes))
+(input 2
+(name "y")
+(optional yes))
+(output 1
+(name "Record"))))
+(device 4 COLLECTOR
+(properties
+(variableScope cont)
+(output1D 0))
+(interface
+(input 1
+(name "Data")
+(tag "Data"))
+(input 2
+(type trigger)
+(name "XEQ")
+(lock name constraints))
+(output 1
+(name "Array")
+(tag "Array"))))
+(device 5 TEXTDISPLAY
+(properties
+(variableScope cont))
+(interface
+(input 1
+(name "Data"))))
+(device 6 FORMULA
+(properties
+(name "getY")
+(variableScope cont)
+(expr 1 "rec.y"))
+(interface
+(input 1
+(name "rec")
+(optional yes))
+(output 1
+(name "Result")
+(tag "Result")
+(lock name constraints)
+(optional yes))))
+(device 7 FORMULA
+(properties
+(name "getX")
+(variableScope cont)
+(expr 1 "rec.x"))
+(interface
+(input 1
+(name "rec")
+(optional yes))
+(output 1
+(name "Result")
+(tag "Result")
+(lock name constraints)
+(optional yes))))
+(configuration
+(connect I1:1 D0:0)
+(connect D0:1 D1:1)
+(connect D0:1 D2:1)
+(connect D1:1 D3:1)
+(connect D2:1 D3:2)
+(connect D3:1 D4:1)
+(connect D0:0 D4:2)
+(connect D4:1 D5:1)
+(connect D4:1 D6:1)
+(connect D4:1 D7:1)
+(connect D7:1 O1:1)
+(connect D6:1 O2:1)))
+(contextCarrier
+(active detail)
+(detail
+(extent 624 632)
+(anchorPt -811 3)
+(configuration
+(devCarrierFor 0
+(active open)
+(icon
+(iconImage "loop.icn"))
+(open
+(extent 99 79))
+(pinCenter 210 190))
+(devCarrierFor 1
+(active open)
+(icon)
+(open
+(extent 275 96))
+(terminals on)
+(pinCenter 280 380))
+(devCarrierFor 2
+(active open)
+(icon)
+(open
+(extent 284 76))
+(terminals on)
+(pinCenter 290 520))
+(devCarrierFor 3
+(active open)
+(icon
+
+(iconImage "build.icn"))
+(open
+(extent 97 54))
+(terminals on)
+(pinCenter 665 450))
+(devCarrierFor 4
+(active open)
+(icon
+
+(extent 53 25))
+(open
+(extent 95 54))
+(terminals on)
+(pinCenter 900 450))
+(devCarrierFor 5
+(active open)
+(icon)
+(open
+(extent 324 226))
+(pinCenter 1260 560))
+(devCarrierFor 6
+(active open)
+(icon
+(extent 28 0))
+(open
+(extent 78 50))
+(terminals on)
+(pinCenter 1640 540))
+(devCarrierFor 7
+(active open)
+(icon
+(extent 28 0))
+(open
+(extent 78 50))
+(terminals on)
+(pinCenter 1640 410))
+(connect I1:1 D0:0
+(points 5 811 312 -160 312 -160 110 210 110 210 130))
+(connect D0:1 D1:1
+(points 6 262 190 280 190 280 250 90 250 90 380 110 380))
+(connect D0:1 D2:1
+(points 6 262 190 280 190 280 250 90 250 90 520 115 520))
+(connect D1:1 D3:1
+(points 4 470 380 490 380 490 430 584 430))
+(connect D2:1 D3:2
+(points 4 484 520 500 520 500 470 584 470))
+(connect D3:1 D4:1
+(points 4 776 450 790 450 790 430 810 430))
+(connect D0:0 D4:2
+(points 5 210 232 210 260 800 260 800 470 810 470))
+(connect D4:1 D5:1
+(points 4 990 450 1010 450 1010 560 1095 560))
+(connect D4:1 D6:1
+(points 6 990 450 1020 450 1020 410 1540 410 1540 540 1568 540))
+(connect D4:1 D7:1
+(points 4 990 450 1020 450 1020 410 1568 410))
+(connect D7:1 O1:1
+(points 4 1731 410 1750 410 1750 152 1434 152))
+(connect D6:1 O2:1
+(points 4 1731 540 1750 540 1750 472 1434 472)))
+(stackingOrder 0 1 2 3 4 5 6 7))))
+(device 2 CONFIRM25
+(properties
+(name "Generuj")
+(variableScope cont)
+(enterButton 0)
+(escapeButton 0)
+(isAssigned2FKey None)
+(okDisabled 1))
+(interface
+(output 1
+(name "Go")
+(lock name constraints)))
+(implementation))
+(configuration
+(connect D1:1 D0:1)
+(connect D1:2 D0:2)
+(connect D2:1 D1:1)))
+(contextCarrier
+(active detail)
+(detail
+(extent 748 585)
+(anchorPt 1 1)
+(configuration
+(devCarrierFor 0
+(active icon)
+(icon
+(extent 35 25))
+(terminals on)
+(pinCenter 500 230))
+(devCarrierFor 1
+(active icon)
+(icon
+(extent 43 25))
+(terminals on)
+(pinCenter 360 220))
+(devCarrierFor 2
+(active open)
+(icon
+(extent 48 0))
+(open
+(extent 67 34))
+(title off)
+(fg "White")
+(pinCenter 230 210))
+(connect D1:1 D0:1
+(points 4 384 210 400 210 400 220 480 220))
+(connect D1:2 D0:2
+(points 4 384 230 400 230 400 240 480 240))
+(connect D2:1 D1:1
+(points 4 266 210 301 210 301 220 336 220)))
+(stackingOrder 0 1 2)))))
+(device 4 CONFIRM25
+(properties
+(name "Generuj")
+(variableScope cont)
+(enterButton 0)
+(escapeButton 0)
+(isAssigned2FKey None)
+(okDisabled 1))
+(interface
+(output 1
+(name "Go")
+(lock name constraints)))
+(implementation))
+(device 11 FORMULA
+(properties
+(variableScope cont)
+(expr 1 "max(y)"))
+(interface
+(input 1
+(name "y")
+(optional yes))
+(output 1
+(name "Result")
+(tag "Result")
+(lock name constraints)
+(optional yes))))
+(device 12 FORMULA
+(properties
+(variableScope cont)
+(expr 1 "max(x)"))
+(interface
+(input 1
+(name "x")
+(optional yes))
+(output 1
+(name "Result")
+(tag "Result")
+(lock name constraints)
+(optional yes))))
+(device 8 FORMULA
+(properties
+(name "getY")
+(variableScope cont)
+(expr 1 "rec.y"))
+(interface
+(input 1
+(name "rec")
+(optional yes))
+(output 1
+(name "Result")
+(tag "Result")
+(lock name constraints)
+(optional yes))))
+(device 9 FORMULA
+(properties
+(name "getX")
+(variableScope cont)
+(expr 1 "rec.x"))
+(interface
+(input 1
+(name "rec")
+(optional yes))
+(output 1
+(name "Result")
+(tag "Result")
+(lock name constraints)
+(optional yes))))
+(device 18 XYPLOT
+(properties
+(variableScope cont))
+(interface
+(input 1
+(name "XData")
+(lock constraints))
+(input 2
+(name "YData1")
+(lock constraints))
+(input 3
+(type control)
+(name "Auto Scale X")
+(lock name constraints)
+(optional yes))
+(input 4
+(type control)
+(name "Auto Scale Y")
+(lock name constraints)
+(optional yes)))
+(implementation
+(tracePin 2)
+(graphMode rectangular)
+(autoAutoX)
+(autoAutoY)))
+(device 19 CONTEXT
+(properties
+(name "Tablica")
+(variableScope cont)
+(trigMode deg)
+(nextID 8)
+(popupTitleText "UserObject")
+(popupMoveable 1))
+(interface
+(input 1
+(name "A")
+(optional yes))
+(output 1
+(type data)
+(name "X")
+(lock constraints)
+(optional yes))
+(output 2
+(type data)
+(name "Y")
+(lock constraints)
+(optional yes)))
+(deviceList
+(device 0 FORRANGE
+(properties
+(variableScope cont)
+(from 1)
+(thru 359)
+(step 1))
+(interface
+(output 1
+(name "Data")
+(lock name constraints))))
+(device 1 FORMULA
+(properties
+(variableScope cont)
+(expr 1 "sin(t)*(exp(cos(t))-2*cos(4*t)-sin(t/12)^5)"))
+(interface
+(input 1
+(name "t")
+(optional yes))
+(output 1
+(name "Result")
+(tag "Result")
+(lock name constraints)
+(optional yes))))
+(device 2 FORMULA
+(properties
+(variableScope cont)
+(expr 1 "cos(t)*(exp(cos(t))-2*cos(4*t)-sin(t/12)^5)"))
+(interface
+(input 1
+(name "t")
+(optional yes))
+(output 1
+(name "Result")
+(tag "Result")
+(lock name constraints)
+(optional yes))))
+(device 3 TORECORD
+(properties
+(variableScope cont)
+(outputType scalar))
+(interface
+(input 1
+(name "x")
+(optional yes))
+(input 2
+(name "y")
+(optional yes))
+(output 1
+(name "Record"))))
+(device 4 COLLECTOR
+(properties
+(variableScope cont)
+(output1D 0))
+(interface
+(input 1
+(name "Data")
+(tag "Data"))
+(input 2
+(type trigger)
+(name "XEQ")
+(lock name constraints))
+(output 1
+(name "Array")
+(tag "Array"))))
+(device 5 TEXTDISPLAY
+(properties
+(variableScope cont))
+(interface
+(input 1
+(name "Data"))))
+(device 6 FORMULA
+(properties
+(name "getY")
+(variableScope cont)
+(expr 1 "rec.y"))
+(interface
+(input 1
+(name "rec")
+(optional yes))
+(output 1
+(name "Result")
+(tag "Result")
+(lock name constraints)
+(optional yes))))
+(device 7 FORMULA
+(properties
+(name "getX")
+(variableScope cont)
+(expr 1 "rec.x"))
+(interface
+(input 1
+(name "rec")
+(optional yes))
+(output 1
+(name "Result")
+(tag "Result")
+(lock name constraints)
+(optional yes))))
+(configuration
+(connect I1:1 D0:0)
+(connect D0:1 D1:1)
+(connect D0:1 D2:1)
+(connect D1:1 D3:1)
+(connect D2:1 D3:2)
+(connect D3:1 D4:1)
+(connect D0:0 D4:2)
+(connect D4:1 D5:1)
+(connect D4:1 D6:1)
+(connect D4:1 D7:1)
+(connect D7:1 O1:1)
+(connect D6:1 O2:1)))
+(contextCarrier
+(active detail)
+(detail
+(extent 624 632)
+(anchorPt -811 3)
+(configuration
+(devCarrierFor 0
+(active open)
+(icon
+(iconImage "loop.icn"))
+(open
+(extent 99 79))
+(pinCenter 210 190))
+(devCarrierFor 1
+(active open)
+(icon)
+(open
+(extent 275 96))
+(terminals on)
+(pinCenter 280 380))
+(devCarrierFor 2
+(active open)
+(icon)
+(open
+(extent 284 76))
+(terminals on)
+(pinCenter 290 520))
+(devCarrierFor 3
+(active open)
+(icon
+(iconImage "build.icn"))
+(open
+(extent 97 54))
+(terminals on)
+(pinCenter 665 450))
+(devCarrierFor 4
+(active open)
+(icon
+(extent 53 25))
+(open
+(extent 95 54))
+(terminals on)
+(pinCenter 900 450))
+(devCarrierFor 5
+(active open)
+(icon)
+(open
+(extent 324 226))
+(pinCenter 1260 560))
+(devCarrierFor 6
+(active open)
+(icon
+(extent 28 0))
+(open
+(extent 78 50))
+(terminals on)
+(pinCenter 1640 540))
+(devCarrierFor 7
+(active open)
+(icon
+(extent 28 0))
+(open
+(extent 78 50))
+(terminals on)
+(pinCenter 1640 410))
+(connect I1:1 D0:0
+(points 5 811 312 -160 312 -160 110 210 110 210 130))
+(connect D0:1 D1:1
+(points 6 262 190 280 190 280 250 90 250 90 380 110 380))
+(connect D0:1 D2:1
+(points 6 262 190 280 190 280 250 90 250 90 520 115 520))
+(connect D1:1 D3:1
+(points 4 470 380 490 380 490 430 584 430))
+(connect D2:1 D3:2
+(points 4 484 520 500 520 500 470 584 470))
+(connect D3:1 D4:1
+(points 4 776 450 790 450 790 430 810 430))
+(connect D0:0 D4:2
+(points 5 210 232 210 260 800 260 800 470 810 470))
+(connect D4:1 D5:1
+(points 4 990 450 1010 450 1010 560 1095 560))
+(connect D4:1 D6:1
+(points 6 990 450 1020 450 1020 410 1540 410 1540 540 1568 540))
+(connect D4:1 D7:1
+(points 4 990 450 1020 450 1020 410 1568 410))
+(connect D7:1 O1:1
+(points 4 1731 410 1750 410 1750 152 1434 152))
+(connect D6:1 O2:1
+(points 4 1731 540 1750 540 1750 472 1434 472)))
+(stackingOrder 0 1 2 3 4 5 6 7))))
+(device 1 FORRANGE
+(properties
+(variableScope cont)
+(from 1)
+(thru 359)
+(step 1))
+(interface
+(output 1
+(name "Data")
+(lock name constraints))))
+(device 2 FORMULA
+(properties
+(variableScope cont)
+(expr 1 "sin(t)*(exp(cos(t))-2*cos(4*t)-sin(t/12)^5)"))
+(interface
+(input 1
+(name "t")
+(optional yes))
+(output 1
+(name "Result")
+(tag "Result")
+(lock name constraints)
+(optional yes))))
+(device 3 FORMULA
+(properties
+(variableScope cont)
+(expr 1 "cos(t)*(exp(cos(t))-2*cos(4*t)-sin(t/12)^5)"))
+(interface
+(input 1
+(name "t")
+(optional yes))
+(output 1
+(name "Result")
+(tag "Result")
+(lock name constraints)
+(optional yes))))
+(device 6 TORECORD
+(properties
+(variableScope cont)
+(outputType scalar))
+(interface
+(input 1
+(name "x")
+(optional yes))
+(input 2
+(name "y")
+(optional yes))
+(output 1
+(name "Record"))))
+(device 5 COLLECTOR
+(properties
+(variableScope cont)
+(output1D 0))
+(interface
+(input 1
+(name "Data")
+(tag "Data"))
+(input 2
+(type trigger)
+(name "XEQ")
+(lock name constraints))
+(output 1
+(name "Array")
+(tag "Array"))))
+(device 7 TEXTDISPLAY
+(properties
+(variableScope cont))
+(interface
+(input 1
+(name "Data"))))
+(device 21 CONTEXT
+(properties
+(name "PLOT")
+(variableScope cont)
+(trigMode deg)
+(nextID 3)
+(popupTitleText "UserObject")
+(popupMoveable 1))
+(interface
+(input 1
+(name "A")
+(optional yes))
+(input 2
+(name "B")
+(optional yes)))
+(deviceList
+(device 0 XYPLOT
+(properties
+(variableScope cont))
+(interface
+(input 1
+(name "XData")
+(lock constraints))
+(input 2
+(name "YData1")
+(lock constraints))
+(input 3
+(type control)
+(name "Auto Scale X")
+(lock name constraints)
+(optional yes))
+(input 4
+(type control)
+(name "Auto Scale Y")
+(lock name constraints)
+(optional yes)))
+(implementation
+(tracePin 2)
+(graphMode rectangular)
+(autoAutoX)
+(autoAutoY)))
+(device 1 FORMULA
+(properties
+(variableScope cont)
+(expr 1 "max(y)"))
+(interface
+(input 1
+(name "y")
+(optional yes))
+(output 1
+(name "Result")
+(tag "Result")
+(lock name constraints)
+(optional yes))))
+(device 2 FORMULA
+(properties
+(variableScope cont)
+(expr 1 "max(x)"))
+(interface
+(input 1
+(name "x")
+(optional yes))
+(output 1
+(name "Result")
+(tag "Result")
+(lock name constraints)
+(optional yes))))
+(configuration
+(connect I1:1 D0:1)
+(connect I2:1 D0:2)
+(connect D2:1 D0:3)
+(connect D1:1 D0:4)
+(connect I2:1 D1:1)
+(connect I1:1 D2:1)))
+(contextCarrier
+(active detail)
+(detail
+(extent 923 641)
+(anchorPt 0 0)
+(configuration
+(devCarrierFor 0
+(active open)
+(icon
+(iconImage "display.icn"))
+(open
+(extent 318 279)
+(displayMode 47)
+(graphType cartesian)
+(gridType grid)
+(scale 0
+(name "Y name")
+(domainName "X name")
+(Yspacing 1)
+(Xspacing 2)
+(scaleColor "Dark Gray")
+(show 1)
+(range -2 3.5 4 linear))
+(domain -3 3 4 linear)
+(trace 0 onScale 0
+(name "YData1")
+(traceColor "Blue")
+(lineType 12)
+(pointType 0))
+(displayBg "White")
+(markerColor "White"))
+(terminals on)
+(pinCenter 760 390))
+(devCarrierFor 1
+(active open)
+(icon)
+(open
+(extent 145 50))
+(terminals on)
+(pinCenter 310 490))
+(devCarrierFor 2
+(active open)
+(icon)
+(open
+(extent 145 50))
+(terminals on)
+(pinCenter 310 390))
+(connect I1:1 D0:1
+(points 4 0 160 10 160 10 280 508 280))
+(connect I2:1 D0:2
+(points 8 0 480 10 480 10 490 190 490 190 320 460 320 460 350 508 350))
+(connect D2:1 D0:3
+(points 4 435 390 460 390 460 420 508 420))
+(connect D1:1 D0:4
+(points 2 435 490 508 490))
+(connect I2:1 D1:1
+(points 4 0 480 10 480 10 490 205 490))
+(connect I1:1 D2:1
+(points 4 0 160 10 160 10 390 205 390)))
+(stackingOrder 1 2 0))))
+(device 20 CONFIRM25
+(properties
+(name "Generuj")
+(variableScope cont)
+(enterButton 0)
+(escapeButton 0)
+(isAssigned2FKey None)
+(okDisabled 1))
+(interface
+(output 1
+(name "Go")
+(lock name constraints)))
+(implementation))
+(device 26 LABEL
+(properties
+(name "Podprogramy")
+(variableScope cont)
+(labelValue "Podprogramy"))
+(implementation))
+(configuration
+(connect D3:1 D1:1)
+(connect D4:1 D2:1)
+(connect D11:1 D3:1)
+(connect D11:1 D4:1)
+(connect D4:1 D5:1)
+(connect D3:1 D5:2)
+(connect D2:1 D5:3)
+(connect D1:1 D5:4)
+(connect D14:1 D6:1)
+(connect D0:1 D7:0)
+(connect D7:1 D8:1)
+(connect D7:1 D9:1)
+(connect D8:1 D10:1)
+(connect D9:1 D10:2)
+(connect D10:1 D11:1)
+(connect D7:0 D11:2)
+(connect D11:1 D12:1)
+(connect D6:1 D13:1)
+(connect D6:2 D13:2)))
+(contextCarrier
+(wndRestoredOrigin 62 62)
+(wndRestoredExtent 830 719)
+(wndState max)
+(active detail)
+(detail
+(extent 1036 813)
+(anchorPt -877 101)
+(configuration
+(devCarrierFor 4
+(active open)
+(icon
+(extent 48 0))
+(open
+(extent 67 34))
+(title off)
+(fg "White")
+(pinCenter 60 340))
+(devCarrierFor 11
+(active open)
+(icon)
+(open
+(extent 145 50))
+(terminals on)
+(pinCenter 2080 650))
+(devCarrierFor 12
+(active open)
+(icon)
+(open
+(extent 145 50))
+(terminals on)
+(pinCenter 2080 550))
+(devCarrierFor 8
+(active open)
+(icon
+(extent 28 0))
+(open
+(extent 78 50))
+(terminals on)
+(pinCenter 1720 410))
+(devCarrierFor 9
+(active open)
+(icon
+(extent 28 0))
+(open
+(extent 78 50))
+(terminals on)
+(pinCenter 1720 280))
+(devCarrierFor 18
+(active open)
+(icon
+(iconImage "display.icn"))
+(open
+(extent 318 279)
+(displayMode 47)
+(graphType cartesian)
+(gridType grid)
+(scale 0
+(name "Y name")
+(domainName "X name")
+(Yspacing 1)
+(Xspacing 2)
+(scaleColor "Dark Gray")
+(show 1)
+(range -2 3.5 4 linear))
+(domain -3 3 4 linear)
+(trace 0 onScale 0
+(name "YData1")
+(traceColor "Blue")
+(lineType 12)
+(pointType 0))
+(displayBg "White")
+(markerColor "White"))
+(terminals on)
+(pinCenter 2530 550))
+(devCarrierFor 19
+(active icon)
+(icon
+(extent 43 25))
+(terminals on)
+(pinCenter 1310 100))
+(devCarrierFor 1
+(active open)
+(icon
+(iconImage "loop.icn"))
+(open
+(extent 99 79))
+(pinCenter 360 140))
+(devCarrierFor 2
+(active open)
+(icon)
+(open
+(extent 275 96))
+(terminals on)
+(pinCenter 430 330))
+(devCarrierFor 3
+(active open)
+(icon)
+(open
+(extent 284 76))
+(terminals on)
+(pinCenter 440 470))
+(devCarrierFor 6
+(active open)
+(icon
+(iconImage "build.icn"))
+(open
+(extent 97 54))
+(terminals on)
+(pinCenter 815 400))
+(devCarrierFor 5
+(active open)
+(icon
+(extent 53 25))
+(open
+(extent 95 54))
+(terminals on)
+(pinCenter 1050 400))
+(devCarrierFor 7
+(active open)
+(icon)
+(open
+(extent 324 226))
+(pinCenter 1410 510))
+(devCarrierFor 21
+(active icon)
+(icon
+(extent 35 25))
+(terminals on)
+(pinCenter 1450 110))
+(devCarrierFor 20
+(active open)
+(icon
+(extent 48 0))
+(open
+(extent 67 34))
+(title off)
+(fg "White")
+(pinCenter 1180 90))
+(devCarrierFor 26
+(active open)
+(icon
+(extent 81 0))
+(open
+(extent 86 27)
+(just l))
+(title off)
+(pinCenter 1290 30))
+(connect D3:1 D1:1
+(points 6 1811 410 1830 410 1830 440 1950 440 1950 650 1975 650))
+(connect D4:1 D2:1
+(points 6 1811 280 1830 280 1830 340 1960 340 1960 550 1975 550))
+(connect D11:1 D3:1
+(points 6 1140 400 1170 400 1170 360 1590 360 1590 410 1648 410))
+(connect D11:1 D4:1
+(points 4 1140 400 1170 400 1170 280 1648 280))
+(connect D4:1 D5:1
+(points 6 1811 280 1830 280 1830 340 1960 340 1960 440 2278 440))
+(connect D3:1 D5:2
+(points 8 1811 410 1830 410 1830 440 1950 440 1950 480 2230 480 2230 510 2278
+510))
+(connect D2:1 D5:3
+(points 4 2205 550 2230 550 2230 580 2278 580))
+(connect D1:1 D5:4
+(points 2 2205 650 2278 650))
+(connect D14:1 D6:1
+(points 4 1216 90 1240 90 1240 100 1286 100))
+(connect D0:1 D7:0
+(points 5 96 340 120 340 120 60 360 60 360 80))
+(connect D7:1 D8:1
+(points 6 412 140 430 140 430 200 240 200 240 330 260 330))
+(connect D7:1 D9:1
+(points 6 412 140 430 140 430 200 240 200 240 470 265 470))
+(connect D8:1 D10:1
+(points 4 620 330 640 330 640 380 734 380))
+(connect D9:1 D10:2
+(points 4 634 470 650 470 650 420 734 420))
+(connect D10:1 D11:1
+(points 4 926 400 940 400 940 380 960 380))
+(connect D7:0 D11:2
+(points 5 360 182 360 210 950 210 950 420 960 420))
+(connect D11:1 D12:1
+(points 4 1140 400 1160 400 1160 510 1245 510))
+(connect D6:1 D13:1
+(points 4 1334 90 1350 90 1350 100 1430 100))
+(connect D6:2 D13:2
+(points 4 1334 110 1350 110 1350 120 1430 120)))
+(stackingOrder 1 3 5 7 8 9 10 11 12 0 4 2 6 14 15 13))
+(numberFormats
+(realFormat standard)
+(realSigDigits 4)
+(realRadixSpec 4)
+(integerBase decimal))))

@@ -1,0 +1,252 @@
+(saveFormat "7.0")
+(date "Wed 08/May/2019 13:36:26 ")
+(veerev "9.33.1811.0201")
+(platform "PC")
+(execMode v6)
+(prefExecMode v9)
+(filterNAN 0)
+(workspaceStackingOrder M)
+(sysconfig)
+(SaveCF no)
+(device 0 ROOTCONTEXT
+(properties
+(variableName Main)
+(variableScope glob)
+(trigMode deg)
+(nextID 10)
+(popupTitleText "Untitled")
+(popupMoveable 1))
+(deviceList
+(device 0 INPUTDLG
+(properties
+(name "Int32 Input")
+(variableScope cont)
+(popupTitle "Int32 Input")
+(prompt "wprowadz liczbe, ktorej pierwiastek chcesz policzyc:")
+(initialValue "5")
+(valueConstraint "0<=value AND value<=1000")
+(vErrorMessage "You must enter an Int32 between 0 and 1000."))
+(interface
+(output 1
+(name "Value")
+(lock name constraints))
+(output 2
+(name "Cancel")
+(lock name constraints)))
+(implementation
+(inputType "integer")))
+(device 1 BREAK
+(properties
+(variableScope cont)))
+(device 2 IFTHENELSE
+(properties
+(variableScope cont)
+(cases 1 "abs(X-prevX)<=0.001"))
+(interface
+(input 1
+(name "X")
+(optional yes))
+(input 2
+(name "prevX")
+(optional yes))
+(output 1
+(name "Then")
+(lock name constraints))
+(output 2
+(name "Else")
+(lock name constraints))))
+(device 3 TOGLOBAL
+(properties
+(name "Set x")
+(variableScope cont)
+(globalName "x"))
+(interface
+(input 1
+(name "Data")
+(tag "Data")
+(lock name))))
+(device 4 FORMULA
+(properties
+(variableScope cont)
+(expr 1 "1/2*(X+(A/X))"))
+(interface
+(input 1
+(name "X")
+(optional yes))
+(input 2
+(name "A")
+(optional yes))
+(output 1
+(name "Result")
+(tag "Result")
+(lock name constraints)
+(optional yes))))
+(device 5 SCROLLINGTEXTDISPLAY
+(properties
+(variableScope cont)
+(logSize 256))
+(interface
+(input 1
+(name "Data"))))
+(device 6 FROMGLOBAL
+(properties
+(name "Get x")
+(variableScope cont)
+(globalName "x"))
+(interface
+(output 1
+(name "Data")
+(tag "Data")
+(lock name constraints))))
+(device 7 REPEATUNTILBREAK
+(properties
+(variableScope cont))
+(interface
+(output 1
+(name "Continuous")
+(lock name constraints))))
+(device 8 TOGLOBAL
+(properties
+(name "Set x")
+(variableScope cont)
+(globalName "x"))
+(interface
+(input 1
+(name "Data")
+(tag "Data")
+(lock name))))
+(device 9 CONSTANT
+(properties
+(name "Int32")
+(variableScope cont)
+(enableEditing 1))
+(interface
+(output 1
+(name "Int32")
+(lock name constraints)))
+(implementation
+(value Int32
+(data  1))
+(initValue Int32
+(data  0))))
+(configuration
+(connect D2:1 D1:0)
+(connect D4:1 D2:1)
+(connect D6:1 D2:2)
+(connect D4:1 D3:1)
+(connect D6:1 D4:1)
+(connect D0:1 D4:2)
+(connect D4:1 D5:1)
+(connect D7:1 D6:0)
+(connect D8:0 D7:0)
+(connect D9:1 D8:1)))
+(contextCarrier
+(wndRestoredOrigin 2 2)
+(wndRestoredExtent 812 585)
+(wndState max)
+(active detail)
+(detail
+(extent 1040 813)
+(anchorPt 0 0)
+(configuration
+(devCarrierFor 0
+(active open)
+(icon)
+(open
+(extent 379 107))
+(terminals on)
+(pinCenter 320 650))
+(devCarrierFor 1
+(active icon)
+(icon
+(extent 36 15))
+(open)
+(terminals on)
+(pinCenter 920 600))
+(devCarrierFor 2
+(active open)
+(icon)
+(open
+(extent 145 51))
+(terminals on)
+(pinCenter 745 580))
+(devCarrierFor 3
+(active open)
+(icon
+(extent 30 0))
+(open
+(extent 73 51))
+(terminals on)
+(pinCenter 955 440))
+(devCarrierFor 4
+(active open)
+(icon)
+(open
+(extent 145 50))
+(terminals on)
+(pinCenter 720 440))
+(devCarrierFor 5
+(active open)
+(icon)
+(open
+(extent 173 167)
+(noformatter))
+(pinCenter 880 240))
+(devCarrierFor 6
+(active open)
+(icon
+(extent 31 0))
+(open
+(extent 73 51))
+(terminals on)
+(pinCenter 475 430))
+(devCarrierFor 7
+(active open)
+(icon
+(extent 68 51)
+(iconImage "loop.icn"))
+(open
+(extent 12 30))
+(terminals on)
+(pinCenter 185 360))
+(devCarrierFor 8
+(active open)
+(icon
+(extent 30 0))
+(open
+(extent 73 51))
+(terminals on)
+(pinCenter 525 250))
+(devCarrierFor 9
+(active open)
+(icon)
+(open
+(extent 67 29)
+(showFormat int))
+(pinCenter 170 230))
+(connect D2:1 D1:0
+(points 3 860 570 920 570 920 590))
+(connect D4:1 D2:1
+(points 6 845 440 870 440 870 490 600 490 600 570 620 570))
+(connect D6:1 D2:2
+(points 4 554 430 590 430 590 590 620 590))
+(connect D4:1 D3:1
+(points 2 845 440 876 440))
+(connect D6:1 D4:1
+(points 2 554 430 615 430))
+(connect D0:1 D4:2
+(points 4 562 620 580 620 580 450 615 450))
+(connect D4:1 D5:1
+(points 6 845 440 870 440 870 370 770 370 770 240 791 240))
+(connect D7:1 D6:0
+(points 3 273 360 480 360 480 384))
+(connect D8:0 D7:0
+(points 4 520 278 520 300 210 300 210 324))
+(connect D9:1 D8:1
+(points 4 206 230 230 230 230 250 446 250)))
+(stackingOrder 0 1 2 3 4 5 6 7 8 9))
+(numberFormats
+(realFormat standard)
+(realSigDigits 4)
+(realRadixSpec 4)
+(integerBase decimal))))
